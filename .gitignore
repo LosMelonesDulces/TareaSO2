@@ -31,3 +31,5 @@
 *.out
 *.app
 daemon.log
+cpu_stress
+cpu_temp
