@@ -49,6 +49,14 @@ void Daemon::monitorTemperature() {
             std::string message = "Warning: CPU temperature (" + std::to_string(temp) + "°C) exceeds threshold (" + std::to_string(topTemp) + "°C)";
             logFile << "[" << std::put_time(now_tm, "%Y-%m-%d %H:%M:%S") << "] "
                     << message << std::endl;
+
+            // Reproducir un beep
+            system("echo -e '\\a'");
+
+            // Mostrar una advertencia como popup
+            std::string notifyCommand = "notify-send 'CPU Temperature Alert' '" + message + "'";
+            system(notifyCommand.c_str());
+
             notifyCallback(message);
         }
 
