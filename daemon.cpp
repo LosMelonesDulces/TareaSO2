@@ -51,7 +51,7 @@ void Daemon::monitorTemperature() {
                     << message << std::endl;
 
             // Reproducir un beep
-            system("echo -e '\\a'");
+            // system("echo -e '\\a'");
 
             // Mostrar una advertencia como popup
             std::string notifyCommand = "notify-send 'CPU Temperature Alert' '" + message + "'";
